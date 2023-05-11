@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "mod",
+  "version": "${version}",
+  "name": "Mod",
+  "description": "",
+  "authors": [
+    "chaottic"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": "https://github.com/chaottic/mod"
+  },
+  "license": "ARR",
+  "icon": "",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.chaottic.mod.common.Mod"
+    ],
+    "client": [
+      "com.chaottic.mod.client.ModClient"
+    ]
+  },
+  "mixins": [
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.19",
+    "fabric-api": "*",
+    "minecraft": "~1.19.4",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
