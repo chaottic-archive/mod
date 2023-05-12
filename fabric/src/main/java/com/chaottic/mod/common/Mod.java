@@ -14,6 +14,8 @@ public final class Mod implements ModInitializer {
         output.accept(ModItems.TEAPOT);
     }).build();
 
+    public static ResourceLocation BLOCK_ENTITY_TO_CLIENT = resourceLocation("block_entity_to_client");
+
     @Override
     public void onInitialize() {
         ModBlocks.registerAll();

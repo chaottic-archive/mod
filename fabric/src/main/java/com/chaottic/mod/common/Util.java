@@ -1,5 +1,10 @@
 package com.chaottic.mod.common;
 
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -42,5 +47,14 @@ public final class Util {
         }
 
         return joined;
+    }
+
+    public static void blockEntityToClient(BlockEntity blockEntity) {
+        var buf = PacketByteBufs.create();
+        buf.writeBlockPos(blockEntity.getBlockPos());
+        buf.writeNbt(blockEntity.getUpdateTag());
+        buf.writeId(BuiltInRegistries.BLOCK_ENTITY_TYPE, blockEntity.getType());
+
+        PlayerLookup.tracking(blockEntity).forEach(player -> ServerPlayNetworking.send(player, Mod.BLOCK_ENTITY_TO_CLIENT, buf));
     }
 }
