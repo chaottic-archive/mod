@@ -10,6 +10,7 @@ public final class Mod implements ModInitializer {
     public void onInitialize() {
         ModBlocks.registerAll();
         ModItems.registerAll();
+        ModBlockEntityTypes.registerAll();
     }
 
     public static ResourceLocation resourceLocation(String path) {

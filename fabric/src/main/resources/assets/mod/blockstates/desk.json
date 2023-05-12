@@ -1,18 +1,48 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,shape=single": {
       "model": "mod:block/desk_single",
       "y": 270
     },
-    "facing=north": {
+    "facing=north,shape=single": {
       "model": "mod:block/desk_single",
       "y": 180
     },
-    "facing=south": {
+    "facing=south,shape=single": {
       "model": "mod:block/desk_single"
     },
-    "facing=west": {
+    "facing=west,shape=single": {
       "model": "mod:block/desk_single",
+      "y": 90
+    },
+    "facing=east,shape=left": {
+      "model": "mod:block/desk_left",
+      "y": 270
+    },
+    "facing=north,shape=left": {
+      "model": "mod:block/desk_left",
+      "y": 180
+    },
+    "facing=south,shape=left": {
+      "model": "mod:block/desk_left"
+    },
+    "facing=west=east,shape=left": {
+      "model": "mod:block/desk_left",
+      "y": 90
+    },
+    "facing=east,shape=right": {
+      "model": "mod:block/desk_right",
+      "y": 270
+    },
+    "facing=north,shape=right": {
+      "model": "mod:block/desk_right",
+      "y": 180
+    },
+    "facing=south,shape=right": {
+      "model": "mod:block/desk_right"
+    },
+    "facing=west=east,shape=right": {
+      "model": "mod:block/desk_right",
       "y": 90
     }
   }

@@ -26,7 +26,7 @@ import static net.minecraft.world.level.block.state.properties.BlockStatePropert
 public final class DeskBlock extends Block {
     private static final EnumProperty<Shape> SHAPE = EnumProperty.create("shape", Shape.class);
 
-    private static final VoxelShape SINGLE = Shapes.join(box(0, 0, 3, 16, 13, 13), box(0, 13, 0, 16, 16, 16), BooleanOp.OR);
+    private static final VoxelShape VOXEL_SHAPE = Shapes.join(box(0, 0, 3, 16, 13, 13), box(0, 13, 0, 16, 16, 16), BooleanOp.OR);
 
     private static final Map<BlockState, VoxelShape> MAP = new HashMap<>();
 
@@ -51,13 +51,7 @@ public final class DeskBlock extends Block {
     }
 
     private static VoxelShape getShape(BlockState blockState) {
-        return Util.rotateShape(getShape(blockState.getValue(SHAPE)), getAngle(blockState.getValue(FACING)));
-    }
-
-    private static VoxelShape getShape(Shape shape) {
-        return switch (shape) {
-            default -> SINGLE;
-        };
+        return Util.rotateShape(VOXEL_SHAPE, getAngle(blockState.getValue(FACING)));
     }
 
     private static Quaternionf getAngle(Direction direction) {
